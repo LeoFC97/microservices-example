@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+      "lib": ["ES2020"],
+      "module": "commonjs",
+      "target": "ES2019",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "baseUrl": ".",
+      "outDir": "recipe-apito/dist",
+      "paths": {
+        "app/*": ["recipe-apito/src/app/*"],
+        "api/*": ["recipe-apito/src/api/*"],
+        "config/*": ["recipe-apito/src/config/*"],
+        "drivers/*": ["recipe-apito/src/drivers/*"],
+        "interfaces/*": ["recipe-apito/src/interfaces/*"],
+        "entities/*": ["recipe-apito/src/entities/*"],
+        "use-cases/*": ["recipe-apito/src/use-cases/*"],
+      },
+      "resolveJsonModule": true,
+      "sourceMap": true,
+      "allowJs": true,
+      "typeRoots": ["src/@types", "node_modules/@types"],
+      "types": ["jest"],
+      "moduleResolution": "node",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
