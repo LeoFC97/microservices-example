@@ -6,3 +6,7 @@ export default interface FoodJoke {
   createdAt: Date,
   updatedAt: Date
 }
+
+export interface CreateRandomJokeBodyData {
+  joke: string,
+}
