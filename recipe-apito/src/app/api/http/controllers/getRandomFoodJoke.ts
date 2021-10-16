@@ -1,7 +1,7 @@
 import { injectable } from 'tsyringe';
 import Controller from '../../../interfaces/http/controller';
 import { HttpResponse } from '../../../interfaces/http/http';
-import GetFoodJokeUseCase from '../../../use-cases/getFoodJoke';
+import GetFoodJokeUseCase from '../../../use-cases/getRandomFoodJoke';
 
 @injectable()
 class GetRandomFoodJokeController implements Controller {
