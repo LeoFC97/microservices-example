@@ -15,12 +15,19 @@ class FoodJokeMongoDBRepository implements FoodJokeRepository {
   constructor() {
     this.model = model<FoodJokeDoc>('FoodJoke', FoodJokeSchema);
   }
+  async create(textJoke: string): Promise<FoodJoke> {
+    console.log(textJoke);
+    const joke = await this.model.create({ joke: textJoke });
+    if (joke) {
+      return joke;
+    }
+    throw new EntityNotFoundError('No joke was found'); // pensar em um erro melhor
+  }
   async getRandom(): Promise<FoodJoke> {
     const joke = await this.model.findOne().limit(1);
     if (joke) {
       return joke;
     }
-
     throw new EntityNotFoundError('No joke was found');
   }
 }
