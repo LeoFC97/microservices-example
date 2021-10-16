@@ -23,4 +23,15 @@ describe('Check if all endpoints are declarated', () => {
       && endpoint.route.methods.get);
     expect(healthMethod).toBeTruthy();
   });
+  test('Should exist path /joke', async () => {
+    const pathToBeTested = '/joke';
+    const healthEnpoint = routes.stack.find((endpoint) => endpoint.route.path === pathToBeTested);
+    expect(healthEnpoint).toBeDefined();
+  });
+  test('Should exists method POST on /joke', async () => {
+    const pathToBeTested = '/joke';
+    const healthMethod = routes.stack.some((endpoint) => endpoint.route.path === pathToBeTested
+      && endpoint.route.methods.post);
+    expect(healthMethod).toBeTruthy();
+  });
 });
