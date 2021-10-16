@@ -1,6 +1,6 @@
 import express from 'express';
 import handleDomainErrors from '../../api/http/middlewares/handle-domain-errors';
-import router from '../../api/http/router';
+import routes from '../../api/http/routes';
 import container from '../../container';
 import { adapt } from './express-middleware-adapter';
 import PathNotFoundMiddleware from '../../api/http/middlewares/path-not-found';
@@ -11,7 +11,7 @@ const startExpressServer = () => {
 
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
-  app.use('/', router);
+  app.use('/', routes);
 
   app.use(adapt(container.resolve(PathNotFoundMiddleware)));
   app.use(handleDomainErrors);
