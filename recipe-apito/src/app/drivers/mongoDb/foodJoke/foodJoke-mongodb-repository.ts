@@ -30,6 +30,11 @@ class FoodJokeMongoDBRepository implements FoodJokeRepository {
     }
     throw new EntityNotFoundError('No joke was found');
   }
+  async getById(jokeId: string): Promise<FoodJoke> {
+    console.log(jokeId);
+    const store = await this.model.findOne({ _id: jokeId });
+    return store as FoodJoke;
+  }
 }
 
 export default FoodJokeMongoDBRepository;
